@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<section class="bell-contact">
+    <div id="hide">
+        <p id="hiddenEmail"><a href="javascript:void(0);">ducnn01@gmail.com</a></p>
+    </div>
+    <div class="holder">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 542.39 388.9901" enable-background="new 0 0 542.39 388.9901" xml:space="preserve"id="Concierge" onclick="activate()">
+            <path id="bellBody" d="M0.5,338.72h404c0,0-22.0115-199.1552-202-199.1552S0.5,338.72,0.5,338.72z"/>
+            <rect id="base" x="0.5" y="356.3062" stroke="#FFFFFF" stroke-miterlimit="10" width="404" height="32.1839"/>
+            <path id="bellButton" class="empty" d="M227.5,90.72v18h-15v21.05c-3.3-0.14-6.63-0.21-10-0.21c-3.7,0-7.37,0.08-11,0.25v-21.09h-15v-18H227.5z"/>
+
+            <g id="soundEffect">
+                <path d="M508.51,74.33l-94.64,69.76c-3.85-4.48-7.83-8.82-11.92-13c25.37-28.22,78.36-86.24,78.36-86.24L508.51,74.33z"/>
+                <path d="M445.07,13.29l-53.39,107.8c-4.66-4.31-9.44-8.44-14.34-12.36C387.32,70.85,406.5,0,406.5,0L445.07,13.29z"/>
+                <path d="M542.39,151.13l-108.41,19.09c-3.75-5.47-7.64-10.77-11.68-15.89c35.5-14.07,107.95-42.14,107.95-42.14L542.39,151.13z"/>
+            </g>
+        </svg>
+    </div>
+
+    <p class="sub">Ring the bell, say hello!</p>
+</section>
+<script>
+    var hiddenDiv = document.getElementById("hide");
+
+    var bell       = document.getElementById("Concierge");
+    var email      = document.getElementById("hiddenEmail");
+    var bellbutton = document.getElementById("bellButton");
+    var bellbody   = document.getElementById("bellBody");
+    var sound      = document.getElementById("soundEffect");
+
+    var all=[email,bellbutton,bellbody,sound];
+    //remove the hidden and then add it back in...
+
+    function activate(){
+        console.log("working");
+        //get all the stuff, and add active to everything
+        all.forEach(function(entry){
+            entry.classList.toggle("active");
+
+        });
+        //toggle it off
+
+    }
+</script>
+</body>
+</html>

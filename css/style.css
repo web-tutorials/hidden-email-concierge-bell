@@ -1,0 +1,84 @@
+.holder {
+  width: 4em;
+  height: 3em; }
+
+#hiddenEmail {
+  transition: all 200ms cubic-bezier(0.05, 0.61, 0.72, 0.99);
+  transform: translateY(25px);
+  opacity: 0; }
+  #hiddenEmail.active {
+    transform: translateY(0);
+    opacity: 1; }
+
+.holder svg {
+  transform: translateX(8px); }
+  .holder svg:hover {
+    cursor: pointer; }
+
+#soundEffect {
+  opacity: 0;
+  transform-origin: 0% 100%;
+  transform: translateX(10%); }
+  #soundEffect.active {
+    animation: ding 600ms 1 cubic-bezier(0.05, 0.61, 0.72, 0.99); }
+
+#bellButton.active {
+  animation: buttonPressed 200ms 1 cubic-bezier(0.05, 0.61, 0.72, 0.99); }
+
+#bellBody {
+  transform-origin: 40% 40%;
+  /* transform:rotate(45deg); */ }
+  #bellBody.active {
+    display: block;
+    animation: bellMove 200ms 1 cubic-bezier(0.05, 0.61, 0.72, 0.99); }
+
+@keyframes buttonPressed {
+  0% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(30px); }
+  100% {
+    transform: translateY(0); } }
+@keyframes bellMove {
+  0% {
+    transform: rotate(0deg); }
+  50% {
+    transform: rotate(10deg); }
+  100% {
+    transform: rotate(0deg); } }
+@keyframes ding {
+  0% {
+    transform: scale(0);
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  100% {
+    transform: scale(1);
+    opacity: 0; } }
+body {
+  background: #f8f8f8;
+  font-family: 'Lato', sans-serif; }
+
+section.bell-contact {
+  margin-top: 30vh;
+  text-align: center; }
+  section.bell-contact .holder {
+    margin: 0 auto; }
+  section.bell-contact #bell {
+    fill: #b8b8b8; }
+  section.bell-contact #soundEffect {
+    fill: #E91E63; }
+
+#hiddenEmail {
+  font-size: 2em;
+  font-weight: 900;
+  letter-spacing: .5px; }
+  #hiddenEmail a {
+    text-decoration: none;
+    color: #E91E63; }
+
+.sub {
+  font-size: .9em;
+  color: #c9c9c9; }
+
+/*# sourceMappingURL=style.css.map */

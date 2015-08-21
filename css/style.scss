@@ -1,0 +1,118 @@
+//vars
+$curve:cubic-bezier(.05,.61,.72,.99);
+$base-transition:all 200ms $curve;
+
+//I could have used keyframes, but none of the animations really call for it? maybe the sound effect.
+
+//Base setup
+.holder {
+  width:4em; height:3em;
+}
+
+//hidden email
+
+#hiddenEmail{
+  transition:$base-transition;
+  transform:translateY(25px);
+  opacity:0;
+  &.active{
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+
+//svg
+.holder svg{
+  transform:translateX(8px); //center the bell
+
+  &:hover{
+    cursor:pointer;
+  }
+}
+#soundEffect{
+  opacity:0;
+  transform-origin:0% 100%;
+  transform:translateX(10%);
+
+  &.active {
+    animation:ding 600ms 1 $curve;
+  }
+
+}
+
+#bellButton{
+  //O, I do actually need a keyframe ani here.
+  &.active{
+    animation:buttonPressed 200ms 1 $curve;
+  }
+}
+
+#bellBody{
+  transform-origin:40% 40%;
+  /* transform:rotate(45deg); */
+  &.active{
+    display:block;
+    animation:bellMove 200ms 1 $curve;
+  }
+}
+//Animation Keyframes!!
+
+@keyframes buttonPressed{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(30px);}
+  100%{transform:translateY(0);}
+};
+
+@keyframes bellMove{
+  0%{transform:rotate(0deg);}
+  50%{transform:rotate(10deg);}
+  100%{transform:rotate(0deg);}
+};
+
+@keyframes ding{
+  0%{transform:scale(0);
+    opacity:0;}
+  20%{opacity:1;}
+  100%{transform:scale(1);
+    opacity:0;}
+};
+
+//page display stlyling, not important for the interaction/ animation but makes the page look pretty
+body{
+  background:#f8f8f8;
+  font-family: 'Lato', sans-serif;
+
+}
+section.bell-contact{
+  margin-top:30vh;
+  text-align:center;
+
+  .holder{
+    margin: 0 auto;
+  }
+
+  #bell{
+    fill:#b8b8b8;
+  }
+  #soundEffect{
+    fill:#E91E63;
+  }
+}
+
+#hiddenEmail{
+  font-size:2em;
+  font-weight:900;
+  letter-spacing:.5px;
+
+
+  a{
+    text-decoration:none;
+    color:#E91E63;
+  }
+}
+
+.sub{
+  font-size:.9em;
+  color:#c9c9c9;
+}
